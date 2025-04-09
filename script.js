@@ -71,7 +71,7 @@ const challenges = {
       desc: "Find flag in environment.",
       points: 110,
       hash: "d5982764b5a157abdee0dfaf93621ccdc24049939db7609b68d50397771cf09e",
-      download: "./DB/Rev/envflag"
+      download: "./DB/Rev/envflag.zip"
     },
     "rev-6": {
       name: "Ghidra Magic",
