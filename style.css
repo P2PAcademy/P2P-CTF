@@ -1,53 +1,102 @@
 :root {
-  --primary: #1f2d3d;
-  --secondary: #3498db;
-  --success: #2ecc71;
-  --danger: #e74c3c;
-  --light: #f8f9fa;
-  --dark: #2c3e50;
+  --primary: #0f0f0f;         /* Terminal black */
+  --secondary: #00ff99;       /* Bright neon green */
+  --success: #00ff66;
+  --danger: #ff4d4d;
+  --light: #0a0a0a;           /* Deep dark background */
+  --dark: #000000;
+  --accent1: #9b59b6;         /* Royal purple */
+  --accent2: #ffd700;         /* Vibrant gold */
 }
 
+/* Animated Gradient Background */
 body {
-  background-color: var(--light);
-  color: var(--dark);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #0a0a0a, #153515, #0a0a0a, #153515);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+  position: relative;
+  z-index: 1;
+  color: var(--secondary);
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
 }
 
+/* Pulsating Radial Overlay for extra depth */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 255, 153, 0.2) 0%, transparent 70%);
+  z-index: -1;
+  animation: pulse 5s ease-in-out infinite;
+}
+
+/* Keyframes for the animated gradient */
+@keyframes gradientBG {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Keyframes for the pulsating overlay */
+@keyframes pulse {
+  0%   { transform: scale(1); opacity: 0.8; }
+  50%  { transform: scale(1.05); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Navbar styling */
 .navbar {
-  background-color: var(--primary);
+  background: linear-gradient(135deg, var(--accent1) 0%, var(--primary) 80%);
+  box-shadow: 0 3px 6px rgba(155, 89, 182, 0.3);
 }
 
 .navbar-brand,
 .nav-link {
-  color: white !important;
-  font-weight: 500;
+  color: var(--accent2) !important;
+  font-weight: bold;
 }
 
 .navbar .nav-link i {
   margin-right: 5px;
 }
 
+/* Challenge Cards */
 .card.challenge {
-  transition: all 0.3s ease;
-  cursor: pointer;
+  border: 2px solid transparent;
   border-radius: 1rem;
-  border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  background: white;
+  background: var(--primary);
+  color: var(--secondary);
+  background-clip: padding-box;
+  background-image:
+    linear-gradient(var(--primary), var(--primary)),
+    linear-gradient(45deg, var(--accent1), var(--secondary));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
 }
 
 .card.challenge:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 0 8px var(--accent1),
+    0 0 16px var(--secondary),
+    0 0 24px rgba(255, 215, 0, 0.3);
 }
 
 .card.challenge .card-body {
   padding: 1.2rem;
 }
 
-/* ✅ NEW: Limit card description to 3 lines */
 .card.challenge .card-text {
-  color: #555;
+  color: #99ffcc;
   min-height: 3.5em;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -58,46 +107,80 @@ body {
 
 .badge.points {
   background-color: var(--danger);
+  color: white;
 }
 
+/* Solved challenge highlight */
 .solved {
   border-left: 6px solid var(--success);
-  background: #e8f5e9;
+  background: #003322;
+}
+
+/* Modal Styling */
+.modal-content {
+  background-color: #0a0a0a;
+  color: var(--secondary);
+  border: 1px solid var(--accent1);
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
 }
 
 .modal-title {
-  color: var(--primary);
+  color: var(--accent2);
 }
 
 .modal-body input {
+  background-color: var(--dark);
+  color: var(--secondary);
+  border: 1px solid var(--accent1);
   border-radius: 0.5rem;
 }
 
 #feedbackMsg {
   min-height: 40px;
+  color: var(--secondary);
 }
 
+/* Make challenge description text inside modal more visible */
+.modal-body #challengeDescription {
+  color: #c1ffc1 !important;  /* A brighter mint green */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Progress Bar */
 .progress {
   height: 12px;
   border-radius: 6px;
   overflow: hidden;
-  background-color: #ddd;
+  background-color: #003322;
 }
 
 .progress-bar {
+  background-color: var(--secondary);
   transition: width 0.4s ease-in-out;
 }
 
+/* Link Download Buttons */
 .link-download-buttons a {
   margin-right: 10px;
+  color: var(--accent2);
+  text-decoration: underline;
+  transition: color 0.3s;
 }
 
+.link-download-buttons a:hover {
+  color: var(--secondary);
+}
+
+/* Footer */
 footer {
   margin-top: 50px;
-  position: relative;
-  bottom: 0;
   width: 100%;
   background: var(--dark);
+  color: var(--secondary);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 -3px 6px rgba(0, 255, 153, 0.15);
 }
 
 @media (max-width: 576px) {
