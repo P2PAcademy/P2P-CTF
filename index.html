@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>P2P CTF Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#"><i class="bi bi-flag-fill me-2"></i>P2P CTF</a>
+      <div class="ms-auto">
+        <a class="nav-link text-white" href="https://discord.gg/sUFGuqtysV" target="_blank">
+          <i class="bi bi-discord"></i> Join Discord
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <h1 class="text-center mb-4">CTF Challenges</h1>
+    <div id="challengesContainer"></div>
+    <div class="text-center mt-5">
+      <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" id="progressBar" style="width: 0%"></div>
+      </div>
+      <small id="progressText" class="text-muted mt-2 d-block">0% Complete (0/0 solved)</small>
+    </div>
+  </div>
+
+  <div class="modal fade" id="challengeModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Challenge Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h4 id="challengeTitle"></h4>
+          <p id="challengeDescription" class="text-muted"></p>
+          <div id="challengeLinkWrapper" class="link-download-buttons mb-2"></div>
+          <input type="text" class="form-control my-3" placeholder="P2P{...}" id="flagInput" autocomplete="off" />
+          <div id="feedbackMsg"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-primary" id="submitFlagBtn"><i class="bi bi-send"></i> Submit Flag</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3">
+    P2P CTF &copy; 2025 | Hosted on GitHub Pages
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
