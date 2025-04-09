@@ -1,15 +1,14 @@
 :root {
-  --primary: #0f0f0f;         /* Terminal black */
-  --secondary: #00ff99;       /* Bright neon green */
+  --primary: #0f0f0f;
+  --secondary: #00ff99;
   --success: #00ff66;
   --danger: #ff4d4d;
-  --light: #0a0a0a;           /* Deep dark background */
+  --light: #0a0a0a;
   --dark: #000000;
-  --accent1: #9b59b6;         /* Royal purple */
-  --accent2: #ffd700;         /* Vibrant gold */
+  --accent1: #9b59b6;
+  --accent2: #ffd700;
 }
 
-/* Animated Gradient Background */
 body {
   background: linear-gradient(-45deg, #0a0a0a, #153515, #0a0a0a, #153515);
   background-size: 400% 400%;
@@ -22,7 +21,6 @@ body {
   padding: 0;
 }
 
-/* Pulsating Radial Overlay for extra depth */
 body::before {
   content: "";
   position: fixed;
@@ -35,21 +33,18 @@ body::before {
   animation: pulse 5s ease-in-out infinite;
 }
 
-/* Keyframes for the animated gradient */
 @keyframes gradientBG {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Keyframes for the pulsating overlay */
 @keyframes pulse {
   0%   { transform: scale(1);   opacity: 0.8; }
   50%  { transform: scale(1.05); opacity: 0.6; }
   100% { transform: scale(1);   opacity: 0.8; }
 }
 
-/* Navbar styling */
 .navbar {
   background: linear-gradient(135deg, var(--accent1) 0%, var(--primary) 80%);
   box-shadow: 0 3px 6px rgba(155, 89, 182, 0.3);
@@ -65,7 +60,6 @@ body::before {
   margin-right: 5px;
 }
 
-/* Challenge Cards */
 .card.challenge {
   border: 2px solid transparent;
   border-radius: 1rem;
@@ -102,21 +96,21 @@ body::before {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3; /* <-- standard version for better compatibility */
   -webkit-box-orient: vertical;
 }
+
 
 .badge.points {
   background-color: var(--danger);
   color: white;
 }
 
-/* Solved challenge highlight */
 .solved {
   border-left: 6px solid var(--success);
   background: #003322;
 }
 
-/* Modal Styling */
 .modal-content {
   background-color: #0a0a0a;
   color: var(--secondary);
@@ -140,39 +134,34 @@ body::before {
   color: var(--secondary);
 }
 
-/* Make challenge description text inside modal more visible */
 .modal-body #challengeDescription {
-  color: #c1ffc1 !important;  /* Brighter mint green */
+  color: #c1ffc1 !important;
   font-size: 1rem;
   line-height: 1.5;
 }
 
-/* ============================= */
-/* PROGRESS BAR & PROGRESS TEXT */
-/* ============================= */
+/* PROGRESS BAR & TEXT */
 .progress {
   height: 12px;
   border-radius: 6px;
   overflow: hidden;
-  background-color: #001f00;  /* Dark green for the container */
-  border: 1px solid var(--accent2);  /* Gold border */
+  background-color: #001f00;
+  border: 1px solid var(--accent2);
 }
 
 .progress-bar {
-  background-color: var(--secondary); /* Neon green fill */
+  background-color: var(--secondary);
   transition: width 0.4s ease-in-out;
 }
 
-/* Updated progress text styling for increased visibility */
 #progressText {
-  color: #00ffff;  /* Bright aqua */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-  font-weight: bold;
+  color: #ffffff;  /* Pure white */
+  font-weight: 600;
+  font-size: 1rem;
   text-align: center;
   margin-top: 0.5rem;
 }
 
-/* Link Download Buttons */
 .link-download-buttons a {
   margin-right: 10px;
   color: var(--accent2);
@@ -184,7 +173,6 @@ body::before {
   color: var(--secondary);
 }
 
-/* Footer */
 footer {
   margin-top: 50px;
   width: 100%;
