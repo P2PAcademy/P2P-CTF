@@ -1,19 +1,52 @@
 const challenges = {
   web: {
     "web-1": {
-      name: "Login Bypass",
-      desc: "Bypass authentication via SQL injection.",
-      points: 100,
-      hash: "226cdc89cc6ece9252ebf1d08f4ee7025e0fc960d4567f4355064482f9ebcdea",
-      link: "./web/login-bypass.html"
-    },
+     name: "Hardcoded Login",
+     desc: "A basic login system hides more than it shows. Can you break in?",
+     points: 100,
+     hash: "",
+     download: ""
+}
+
+,
     "web-2": {
-      name: "XSS Exploit",
-      desc: "Inject JavaScript to extract session data.",
-      points: 150,
-      hash: "5f4dcc3b5aa765d61d8327deb882cf992e35ec9a5f8453f68e6c8b8d4cef5e9e",
-      download: "./web/xss.zip"
-    }
+      name: "Mastering Chains - 1",
+      desc: "An portal which hides many things. Break it and move forward.",
+      points: 100,
+      hash: "",
+      download: ""
+}
+
+,
+     "web-3": {
+     name: "Mastering Chains - 2",
+     desc: "Part 2 of Mastering Chains. Solve part 1 move forward.",
+     points: 150,
+     hash: "",
+     download: ""
+}
+
+,
+     "web-4": {
+     name: "Mastering Chains - 3",
+     desc: "Part 3 of Mastering Chains. Break into part 2 move forward. Good luck!",
+     points: 150,
+     hash: "",
+     download: ""
+}
+
+,
+     "web-5": {
+     name: "Mastering Chains - 4",
+     desc: "Part 4 of Mastering Chains. Satellite imagery intercepted from a compromised drone reveals nothing suspicious at first glance.
+       But operatives believe there's more to the image than meets the eye.
+       Hidden coordinates? Encrypted metadata? You must extract and analyze the image thoroughly.",
+     points: 200,
+     hash: "",
+     download: ""
+}
+
+,
   },
   pwn: {
     "pwn-1": {
