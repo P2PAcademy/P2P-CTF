@@ -44,9 +44,9 @@ body::before {
 
 /* Keyframes for the pulsating overlay */
 @keyframes pulse {
-  0%   { transform: scale(1); opacity: 0.8; }
+  0%   { transform: scale(1);   opacity: 0.8; }
   50%  { transform: scale(1.05); opacity: 0.6; }
-  100% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1);   opacity: 0.8; }
 }
 
 /* Navbar styling */
@@ -142,22 +142,34 @@ body::before {
 
 /* Make challenge description text inside modal more visible */
 .modal-body #challengeDescription {
-  color: #c1ffc1 !important;  /* A brighter mint green */
+  color: #c1ffc1 !important;  /* Brighter mint green */
   font-size: 1rem;
   line-height: 1.5;
 }
 
-/* Progress Bar */
+/* ============================= */
+/* PROGRESS BAR & PROGRESS TEXT */
+/* ============================= */
 .progress {
   height: 12px;
   border-radius: 6px;
   overflow: hidden;
-  background-color: #003322;
+  background-color: #001f00;  /* Dark green for the container */
+  border: 1px solid var(--accent2);  /* Gold border */
 }
 
 .progress-bar {
-  background-color: var(--secondary);
+  background-color: var(--secondary); /* Neon green fill */
   transition: width 0.4s ease-in-out;
+}
+
+/* Updated progress text styling for increased visibility */
+#progressText {
+  color: #00ffff;  /* Bright aqua */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 /* Link Download Buttons */
