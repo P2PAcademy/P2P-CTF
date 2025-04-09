@@ -45,6 +45,17 @@ body {
   padding: 1.2rem;
 }
 
+/* ✅ NEW: Limit card description to 3 lines */
+.card.challenge .card-text {
+  color: #555;
+  min-height: 3.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 .badge.points {
   background-color: var(--danger);
 }

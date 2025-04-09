@@ -1,74 +1,128 @@
 const challenges = {
   web: {
     "web-1": {
-     name: "Hardcoded Login",
-     desc: "A basic login system hides more than it shows. Can you break in?",
-     points: 100,
-     hash: "",
-     download: ""
-}
-
-,
-    "web-2": {
-      name: "Mastering Chains - 1",
-      desc: "An portal which hides many things. Break it and move forward.",
+      name: "Hardcoded Login",
+      desc: "A basic login system hides more than it shows. Can you break in?",
       points: 100,
       hash: "",
       download: ""
-}
-
-,
-     "web-3": {
-     name: "Mastering Chains - 2",
-     desc: "Part 2 of Mastering Chains. Solve part 1 move forward.",
-     points: 150,
-     hash: "",
-     download: ""
-}
-
-,
-     "web-4": {
-     name: "Mastering Chains - 3",
-     desc: "Part 3 of Mastering Chains. Break into part 2 move forward. Good luck!",
-     points: 150,
-     hash: "",
-     download: ""
-}
-
-,
-     "web-5": {
-     name: "Mastering Chains - 4",
-     desc: "Part 4 of Mastering Chains. Satellite imagery intercepted from a compromised drone reveals nothing suspicious at first glance.
-       But operatives believe there's more to the image than meets the eye.
-       Hidden coordinates? Encrypted metadata? You must extract and analyze the image thoroughly.",
-     points: 200,
-     hash: "",
-     download: ""
-}
-
-,
-  },
-  pwn: {
-    "pwn-1": {
-      name: "Stack Smashing",
-      desc: "Exploit buffer overflow to hijack execution.",
+    },
+    "web-2": {
+      name: "Mastering Chains - 1",
+      desc: "A portal which hides many things. Break it and move forward.",
+      points: 100,
+      hash: "",
+      download: ""
+    },
+    "web-3": {
+      name: "Mastering Chains - 2",
+      desc: "Part 2 of Mastering Chains. Solve part 1 and move forward.",
+      points: 150,
+      hash: "",
+      download: ""
+    },
+    "web-4": {
+      name: "Mastering Chains - 3",
+      desc: "Part 3 of Mastering Chains. Break into part 2 and move forward. Good luck!",
+      points: 150,
+      hash: "",
+      download: ""
+    },
+    "web-5": {
+      name: "Mastering Chains - 4",
+      desc: `Part 4 of Mastering Chains. Satellite imagery intercepted from a compromised drone reveals nothing suspicious at first glance.
+             But operatives believe there's more to the image than meets the eye. Hidden coordinates? Encrypted metadata? You must extract and analyze the image thoroughly.`,
       points: 200,
-      hash: "5f4dcc3b5aa765d61d8327deb882cf992e35ec9a5f8453f68e6c8b8d4cef5e9e",
-      download: "./pwn/stack-smash.zip"
+      hash: "",
+      download: ""
     }
   },
   reverse: {
-    "rev-1": { name: "String Finder", desc: "Analyze strings in binaries.", points: 100, hash: "", download: "./Rev/strings.zip" },
-    "rev-2": { name: "Trace Viewer", desc: "Use ltrace to follow calls.", points: 120, hash: "", download: "./Rev/ltrace.zip" },
-    "rev-3": { name: "XOR Decode", desc: "Undo XOR encoding.", points: 130, hash: "", download: "./Rev/xor.zip" },
-    "rev-4": { name: "Stack Overflow", desc: "Reverse stack overflow.", points: 140, hash: "", download: "./Rev/overflow.zip" },
-    "rev-5": { name: "Env Secret", desc: "Find flag in environment.", points: 110, hash: "", download: "./Rev/envflag" },
-    "rev-6": { name: "Ghidra Magic", desc: "Decompile and analyze.", points: 160, hash: "", download: "./Rev/ghidra.zip" }
+    "rev-1": {
+      name: "String Finder",
+      desc: "Analyze strings in binaries.",
+      points: 100,
+      hash: "",
+      download: "./DB/Rev/strings.zip"
+    },
+    "rev-2": {
+      name: "Trace Viewer",
+      desc: "Use ltrace to follow calls.",
+      points: 120,
+      hash: "",
+      download: "./DB/Rev/ltrace.zip"
+    },
+    "rev-3": {
+      name: "XOR Decode",
+      desc: "Undo XOR encoding.",
+      points: 130,
+      hash: "",
+      download: "./DB/Rev/xor.zip"
+    },
+    "rev-4": {
+      name: "Stack Overflow",
+      desc: "Reverse stack overflow.",
+      points: 140,
+      hash: "",
+      download: "./DB/Rev/overflow.zip"
+    },
+    "rev-5": {
+      name: "Env Secret",
+      desc: "Find flag in environment.",
+      points: 110,
+      hash: "",
+      download: "./DB/Rev/envflag"
+    },
+    "rev-6": {
+      name: "Ghidra Magic",
+      desc: "Decompile and analyze.",
+      points: 160,
+      hash: "",
+      download: "./DB/Rev/ghidra.zip"
+    }
+  },
+  osint: {
+    "osint-1": {
+      name: "Where was Shadowlink?",
+      desc: `Our field agent "Shadowlink" sent us one last image before communication was cut off. This image appears to have been taken near the coordinates of his last known location.
+             He left a short message: 💬 "The horns of truth pierce the lies of the market. That's where I waited."
+             Your mission is to locate the statue near this building that our agent was referring to.
+             Submit the name of the statue in the format: P2P{statue_name}`,
+      points: 100,
+      hash: "",
+      download: "./DB/osint/Shadowlink.bmp"
+    }
+  },
+  stenography: {
+    "stenography-1": {
+      name: "Shadows in the field",
+      desc: `Satellite imagery intercepted from a compromised drone reveals nothing suspicious at first glance. But operatives believe there's more to the image than meets the eye.
+             Hidden coordinates? Encrypted metadata? You must extract and analyze the image thoroughly.`,
+      points: 150,
+      hash: "",
+      download: "./DB/stenography/Field.jpg"
+    }
+  },
+  cryptography: {
+    "cryptography-1": {
+      name: "Layered Secrets",
+      desc: `A suspicious encoded message was found in the logs of a breached system. It looks like Base64... but that might not be the whole story.
+             Can you dig deeper and recover the flag?
+             'VTJVe2h3ZHV5dF9ueF9renN9'`,
+      points: 100,
+      hash: "",
+      download: ""
+    }
   }
 };
 
+
 let solved = JSON.parse(localStorage.getItem("solved") || '{}');
 let currentChallenge = null;
+
+function truncateText(text, maxLength) {
+  return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+}
 
 function renderChallenges() {
   const container = document.getElementById("challengesContainer");
@@ -88,7 +142,7 @@ function renderChallenges() {
         <div class="card challenge ${solved[id] ? 'solved' : ''}" onclick="openChallenge('${category}', '${id}')">
           <div class="card-body">
             <h6 class="card-title mb-1">${data.name}</h6>
-            <p class="card-text small mb-2">${data.desc}</p>
+            <p class="card-text small mb-2" title="${data.desc}">${truncateText(data.desc, 80)}</p>
             <span class="badge points">${data.points} pts</span>
             ${solved[id] ? '<span class="badge bg-success ms-2">Solved</span>' : ''}
           </div>
